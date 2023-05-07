@@ -12,12 +12,13 @@ public class ValidMobilePassword {
 
         System.out.println("Enter Mobile Password ");
         String mobilePassword = input.next();
-        Pattern pattern4 = Pattern.compile("^[A-Za-z]{8,}$");
-        Matcher matcher4 = pattern4.matcher(mobilePassword);
-        if (matcher4.matches()) {
-            System.out.println("valid Rule 1");
+        //rule2: minimum 8 chracters with atleat 1 capital chracter and 1 numeric word
+        Pattern pattern = Pattern.compile("^(?=[a-z]*[A-Z])(?=.*[0-9]).{8,}$");
+        Matcher matcher = pattern.matcher(mobilePassword);
+        if (matcher.matches()) {
+            System.out.println("valid Rule 2");
         } else {
-            System.out.println("Invalid Rule 1");
+            System.out.println("Invalid Rule 2");
         }
     }
 }
